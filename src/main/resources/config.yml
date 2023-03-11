@@ -1,0 +1,40 @@
+# 1 Full Heart = 2.0
+HeartItem: COMMAND_BLOCK
+HeartFragmentItem: CHAIN_COMMAND_BLOCK
+LoseHeartsFromNaturalCauses: true
+EnableGracePeriod: false
+HeartExchange: 2.0
+HeartMax: 60.0
+HeartsOnRevive: 10.0
+DropHeartFragment: false
+DropHeart: false
+HeartRecipe:
+  - HEART_FRAGMENT
+  - DIAMOND_BLOCK
+  - HEART_FRAGMENT
+  - DIAMOND_BLOCK
+  - HEART_OF_THE_SEA
+  - DIAMOND_BLOCK
+  - HEART_FRAGMENT
+  - DIAMOND_BLOCK
+  - HEART_FRAGMENT
+HeartFragmentRecipe:
+  - GOLD_BLOCK
+  - NETHERITE_SCRAP
+  - GOLD_BLOCK
+  - DIAMOND_BLOCK
+  - TOTEM_OF_UNDYING
+  - DIAMOND_BLOCK
+  - GOLD_BLOCK
+  - NETHERITE_SCRAP
+  - GOLD_BLOCK
+ReviveBeaconRecipe:
+  - HEART
+  - HEART
+  - HEART
+  - HEART
+  - NETHER_STAR
+  - HEART
+  - NETHERITE_INGOT
+  - NETHERITE_INGOT
+  - NETHERITE_INGOT
