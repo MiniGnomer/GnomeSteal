@@ -8,17 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GSConfigTabCompletion implements TabCompleter {
-
-    //List<String> autocomplete = new ArrayList<>();
-    //        autocomplete.add("HeartItem");
-    //        autocomplete.add("HeartFragmentItem");
-    //        autocomplete.add("LoseHeartsFromNaturalCauses");
-    //        autocomplete.add("EnableGracePeriod");
-    //        autocomplete.add("HeartExchange");
-    //        autocomplete.add("HeartsOnRevive");
-    //        autocomplete.add("DropHeartFragment");
-    //        autocomplete.add("DropHeart");
-
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
 

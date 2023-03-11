@@ -16,30 +16,28 @@ public class WithdrawCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
         if (sender instanceof Player) {
-            if (command.getName().equalsIgnoreCase("withdraw")) {
-                Player p = (Player) sender;
-                if (args.length == 1) {
-                    if (p.getInventory().firstEmpty() >= 0) {
-                        try {
-                            int heartAmount = Integer.parseInt(args[0]);
-                            double doubleHeartAmount = heartAmount * GnomeSteal.instance.getConfig().getDouble("HeartExchange");
-                            if (heartAmount < p.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue() / 2) {
-                                if (heartAmount > 0) {
-                                    ItemManager.heart.setAmount(heartAmount);
-                                    p.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(p.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue() - doubleHeartAmount);
-                                    p.getInventory().addItem(ItemManager.heart);
-                                } else {
-                                    p.sendMessage("§cYou must send a positive integer!");
-                                }
+            Player p = (Player) sender;
+            if (args.length == 1) {
+                if (p.getInventory().firstEmpty() >= 0) {
+                    try {
+                        int heartAmount = Integer.parseInt(args[0]);
+                        double doubleHeartAmount = heartAmount * GnomeSteal.instance.getConfig().getDouble("HeartExchange");
+                        if (heartAmount < p.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue() / 2) {
+                            if (heartAmount > 0) {
+                                ItemManager.heart.setAmount(heartAmount);
+                                p.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(p.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue() - doubleHeartAmount);
+                                p.getInventory().addItem(ItemManager.heart);
                             } else {
-                                p.sendMessage("§cYou don't have enough hearts!");
+                                p.sendMessage("§cYou must send a positive integer!");
                             }
-                        } catch (Exception exception) {
-                            p.sendMessage("§cYou must send a positive integer!");
+                        } else {
+                            p.sendMessage("§cYou don't have enough hearts!");
                         }
-                    } else {
-                        p.sendMessage("§cYou don't have any free slots!");
+                    } catch (Exception exception) {
+                        p.sendMessage("§cYou must send a positive integer!");
                     }
+                } else {
+                    p.sendMessage("§cYou don't have any free slots!");
                 }
             }
         } return true;

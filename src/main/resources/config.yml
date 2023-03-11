@@ -1,13 +1,52 @@
-# 1 Full Heart = 2.0
+# Change what item the heart should be
 HeartItem: COMMAND_BLOCK
+
+# Change what item the heart fragment should be
 HeartFragmentItem: CHAIN_COMMAND_BLOCK
+
+# Should players be able to lose hearts from natural causes (ex: fall damage, lava, etc)
+# 'true' means yes
+# 'false' means no
 LoseHeartsFromNaturalCauses: true
+
+# Should players be able to kill each other
+# 'true' means yes
+# 'false' means no
 EnableGracePeriod: false
+
+# How many hearts should players lose/gain at a time
+# 1 Full Heart = 2.0
 HeartExchange: 2.0
+
+# How many hearts should players be able to gain maximum
+# 1 Full Heart = 2.0
 HeartMax: 60.0
+
+# When a player is revived how many hearts should the have
+# 1 Full Heart = 2.0
 HeartsOnRevive: 10.0
+
+# Should players drop a heart fragment on death instead of a full heart
+# 'true' means yes
+# 'false' means no
 DropHeartFragment: false
+
+# Should players drop a heart fragment on death instead of a full heart
+# 'true' means yes
+# 'false' means no
 DropHeart: false
+
+# Command to run when a player gets to 0 hearts
+# DON'T ADD A '/' AT THE BEGINNING
+# {player} = the player who got to 0 hearts
+# If you want to use the default system write "{default}"
+EliminateCommand: ban {player}
+
+# Crafting recipes (put items in all capital letters)
+# Goes in this order:
+# 1/2/3
+# 4/5/6
+# 7/8/9
 HeartRecipe:
   - HEART_FRAGMENT
   - DIAMOND_BLOCK

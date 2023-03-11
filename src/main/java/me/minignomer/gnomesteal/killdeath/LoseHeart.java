@@ -18,7 +18,7 @@ public class LoseHeart implements Listener {
         Player p = e.getEntity().getPlayer();
         Player k = e.getEntity().getKiller();
         if (GnomeSteal.instance.getConfig().getBoolean("LoseHeartsFromNaturalCauses")) {
-            if (p.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue() <= 2.0) {
+            if (p.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue() <= 1.0) {
                 List<String> list = BannedPlayersConfig.get().getStringList("Banned");
                 list.add(p.getName());
                 BannedPlayersConfig.get().set("Banned", list);
