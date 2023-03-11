@@ -25,7 +25,6 @@ public final class GnomeSteal extends JavaPlugin {
 
     public static List<String> list;
 
-
     @Override
     public void onEnable() {
         Bukkit.getLogger().info("GnomeSteal Enabled");
