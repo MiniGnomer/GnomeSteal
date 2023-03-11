@@ -40,8 +40,6 @@ public final class GnomeSteal extends JavaPlugin {
         BannedPlayersConfig.reload();
         ItemManager.itemInit();
         RecipeManager.init();
-
-
         this.getServer().getPluginManager().registerEvents(new LoseHeart(), this);
         this.getServer().getPluginManager().registerEvents(new GainHeart(), this);
         this.getServer().getPluginManager().registerEvents(new KickPlayerOnJoin(), this);
