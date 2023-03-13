@@ -24,6 +24,7 @@ public class GSConfigCommand implements CommandExecutor {
                             GnomeSteal.instance.saveConfig();
                             GnomeSteal.instance.reloadConfig();
                             p.sendMessage("§aHeartItem has been set to: " + args[1].toUpperCase());
+                            ItemManager.itemInit();
                         } else {
                             p.sendMessage("§cYou must send a proper item see item list here: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html");
                         }
@@ -35,6 +36,7 @@ public class GSConfigCommand implements CommandExecutor {
                             GnomeSteal.instance.saveConfig();
                             GnomeSteal.instance.reloadConfig();
                             p.sendMessage("§aHeartFragmentItem has been set to: " + args[1].toUpperCase());
+                            ItemManager.itemInit();
                         } else {
                             p.sendMessage("§cYou must send a proper item see item list here: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html");
                         }

@@ -37,10 +37,15 @@ DropHeartFragment: false
 DropHeart: false
 
 # Command to run when a player gets to 0 hearts
-# DON'T ADD A '/' AT THE BEGINNING
+# DO NOT ADD THE '/' AT THE BEGINNING
 # {player} = the player who got to 0 hearts
-# If you want to use the default system write "{default}"
-EliminateCommand: ban {player}
+# {killer} = the player killed the player who got to 0 hearts
+# If you want to use the default ban system write "{default}"
+# EXAMPLE:
+# EliminateCommand: advancement grant {killer} only minecraft:adventure/kill_all_mobs
+
+# REAL:
+EliminateCommand: {default}
 
 # Crafting recipes (put items in all capital letters)
 # Goes in this order:

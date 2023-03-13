@@ -4,63 +4,65 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class GSConfigTabCompletion implements TabCompleter {
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
 
         if (args.length == 1) {
-            List<String> autocomplete = new ArrayList<>();
-            autocomplete.add("HeartItem");
-            autocomplete.add("HeartFragmentItem");
-            autocomplete.add("LoseHeartsFromNaturalCauses");
-            autocomplete.add("EnableGracePeriod");
-            autocomplete.add("HeartExchange");
-            autocomplete.add("HeartsOnRevive");
-            autocomplete.add("HeartMax");
-            autocomplete.add("DropHeartFragment");
-            autocomplete.add("DropHeart");
-            return autocomplete;
+            Set<String> set = new HashSet<>();
+            boolean b1 = Collections.addAll(set,
+                    "HeartItem",
+                    "HeartFragmentItem",
+                    "LoseHeartsFromNaturalCauses",
+                    "EnableGracePeriod",
+                    "HeartExchange",
+                    "HeartsOnRevive",
+                    "HeartMax",
+                    "DropHeartFragment",
+                    "DropHeart",
+                    "Get");
+            return new ArrayList<>(set);
         } else if (args.length == 2) {
-            List<String> autocomplete = new ArrayList<>();
+            Set<String> set = new HashSet<>();
             switch (args[0]) {
                 case "LoseHeartsFromNaturalCauses":
                 case "EnableGracePeriod":
                 case "DropHeartFragment":
                 case "DropHeart":
-                    autocomplete.add("True");
-                    autocomplete.add("False");
-                    return autocomplete;
+                    boolean b2 = Collections.addAll(set, "True", "False");
+                    return new ArrayList<>(set);
                 case "HeartExchange":
                 case "HeartsOnRevive":
-                    autocomplete.add("1");
-                    autocomplete.add("2");
-                    autocomplete.add("3");
-                    autocomplete.add("4");
-                    autocomplete.add("5");
-                    autocomplete.add("6");
-                    autocomplete.add("7");
-                    autocomplete.add("8");
-                    autocomplete.add("9");
-                    autocomplete.add("10");
-                    return autocomplete;
+                    boolean b3 = Collections.addAll(set,
+                            "1",
+                            "2",
+                            "3",
+                            "4",
+                            "5",
+                            "6",
+                            "7",
+                            "8",
+                            "9");
+                    return new ArrayList<>(set);
                 case "HeartMax":
-                    autocomplete.add("15");
-                    autocomplete.add("20");
-                    autocomplete.add("25");
-                    autocomplete.add("30");
-                    autocomplete.add("35");
-                    autocomplete.add("40");
-                    autocomplete.add("45");
-                    autocomplete.add("50");
-                    autocomplete.add("60");
-                    autocomplete.add("100");
-                    return autocomplete;
+                    boolean b4 = Collections.addAll(set,
+                            "10",
+                            "20",
+                            "30",
+                            "40",
+                            "50",
+                            "60",
+                            "100");
+                    return new ArrayList<>(set);
+                case "Get":
+                    boolean b5 = Collections.addAll(set,
+                            "Heart",
+                            "HeartFragment",
+                            "ReviveBeacon");
+                    return new ArrayList<>(set);
             }
-        }
-
-        return null;
+        } return null;
     }
 }
