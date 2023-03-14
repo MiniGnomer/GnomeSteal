@@ -5,7 +5,6 @@ import me.minignomer.gnomesteal.files.BannedPlayersConfig;
 import org.bukkit.Bukkit;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.command.CommandException;
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -21,7 +20,7 @@ public class LoseHeart implements Listener {
         Player k = e.getEntity().getKiller();
         if (GnomeSteal.instance.getConfig().getBoolean("LoseHeartsFromNaturalCauses")) {
             if (p.getAttribute(Attribute.GENERIC_MAX_HEALTH).getBaseValue() <= GnomeSteal.instance.getConfig().getDouble("HeartExchange")) {
-                if (GnomeSteal.instance.getConfig().getString("EliminateCommand").equals("default")) {
+                if (GnomeSteal.instance.getConfig().getString("EliminateCommand").equals("{default}")) {
                     List<String> list = BannedPlayersConfig.get().getStringList("Banned");
                     list.add(p.getName());
                     BannedPlayersConfig.get().set("Banned", list);

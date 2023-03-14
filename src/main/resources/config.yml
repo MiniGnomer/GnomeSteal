@@ -4,7 +4,7 @@ HeartItem: COMMAND_BLOCK
 # Change what item the heart fragment should be
 HeartFragmentItem: CHAIN_COMMAND_BLOCK
 
-# Should players be able to lose hearts from natural causes (ex: fall damage, lava, etc)
+# Should players be able to lose hearts from natural causes (ex: fall damage, lava, etc.)
 # 'true' means yes
 # 'false' means no
 LoseHeartsFromNaturalCauses: true
@@ -22,16 +22,16 @@ HeartExchange: 2.0
 # 1 Full Heart = 2.0
 HeartMax: 60.0
 
-# When a player is revived how many hearts should the have
+# When a player is revived how many hearts should the player have
 # 1 Full Heart = 2.0
 HeartsOnRevive: 10.0
 
-# Should players drop a heart fragment on death instead of a full heart
+# Should players drop a heart fragment on death instead of into the heart bar
 # 'true' means yes
 # 'false' means no
 DropHeartFragment: false
 
-# Should players drop a heart fragment on death instead of a full heart
+# Should players drop a heart on death instead of into the heart bar
 # 'true' means yes
 # 'false' means no
 DropHeart: false
